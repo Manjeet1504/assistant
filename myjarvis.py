@@ -79,8 +79,8 @@ def sendEmail(to,content):
     server= smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
-    server.login('mannup098@gmail.com','bwvp72se6j')
-    server.sendmail('mannup098@gmail.com',to,content)
+    server.login('your email','password of email')
+    server.sendmail('your mail',to,content)
     server.close()
 
 if __name__ =='__main__':
@@ -126,7 +126,7 @@ if __name__ =='__main__':
             try: 
                 speak('what should i say?')
                 content=takeCommand()
-                to = "mannup098@gmail.com"
+                to = "email address"
                 sendEmail(to,content)
                 speak('Email has been sent.')
             
@@ -214,7 +214,7 @@ if __name__ =='__main__':
         elif 'news' in query:
              
             try:
-                jsonObj = urlopen('''https://newsapi.org / v1 / articles?source = the-times-of-india&sortBy = top&apiKey =\\2df494f16b0041cbaa08251f5720d6c5\\''')
+                jsonObj = urlopen('''https://newsapi.org / v1 / articles?source = the-times-of-india&sortBy = top&apiKey =\\api key\\''')
                 data = json.load(jsonObj)
                 i = 1
                  
@@ -317,7 +317,7 @@ if __name__ =='__main__':
              
             # Google Open weather website
             # to get API of Open weather
-            api_key = "14431ba7f26b19ff4a5d8a176f9c522d"
+            api_key = "api key"
             base_url = "http://api.openweathermap.org / data / 2.5 / weather?"
             speak(" City name ")
             print("City name : ")
@@ -340,8 +340,8 @@ if __name__ =='__main__':
              
         elif "send message " in query:
                 # You need to create an account on Twilio to use this service
-                account_sid = 'AC95d3e449ffe41bfd75f7cb969a6a65fd'
-                auth_token = '9272eed8f890ce835a5c6dfcf5a01764'
+                account_sid = 'account sid'
+                auth_token = 'auth token id'
                 client = Client(account_sid, auth_token)
                 speak("whom shoud i send")
                 receiver_no=input()
